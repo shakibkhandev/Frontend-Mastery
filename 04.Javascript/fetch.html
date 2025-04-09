@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch API Crash Course</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .container {
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+      }
+      #output {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        min-height: 100px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fetch API Crash Course</h1>
+
+    <!-- Basic GET Request -->
+    <div class="container">
+      <h2>1. Basic GET Request</h2>
+      <button onclick="basicGet()">Fetch Posts</button>
+      <div id="basicGetOutput" class="output"></div>
+    </div>
+
+    <!-- POST Request -->
+    <div class="container">
+      <h2>2. POST Request</h2>
+      <div class="form-group">
+        <label for="postTitle">Title:</label>
+        <input type="text" id="postTitle" placeholder="Enter title" />
+      </div>
+      <div class="form-group">
+        <label for="postBody">Body:</label>
+        <textarea id="postBody" placeholder="Enter body"></textarea>
+      </div>
+      <button onclick="createPost()">Create Post</button>
+      <div id="postOutput" class="output"></div>
+    </div>
+
+    <!-- Error Handling -->
+    <div class="container">
+      <h2>3. Error Handling</h2>
+      <button onclick="errorHandling()">Test Error Handling</button>
+      <div id="errorOutput" class="output"></div>
+    </div>
+
+    <!-- Fetch with Headers -->
+    <div class="container">
+      <h2>4. Fetch with Headers</h2>
+      <button onclick="fetchWithHeaders()">Fetch with Custom Headers</button>
+      <div id="headersOutput" class="output"></div>
+    </div>
+
+    <script src="fetch.js"></script>
+  </body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Crash Course</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Selectors Section -->
+    <section class="selectors-section">
+      <h1>CSS Selectors</h1>
+      <div class="selector-demo">
+        <p>Type selector</p>
+        <p class="class-selector">Class selector</p>
+        <p id="id-selector">ID selector</p>
+        <p data-attribute="demo">Attribute selector</p>
+        <a href="#" class="pseudo-demo">Pseudo-class demo</a>
+        <p class="pseudo-element-demo">Pseudo-element demo</p>
+      </div>
+    </section>
+
+    <!-- Box Model Section -->
+    <section class="box-model-section">
+      <h2>Box Model</h2>
+      <div class="box-model-demo">
+        <div class="box-content">Content</div>
+      </div>
+    </section>
+
+    <!-- Positioning Section -->
+    <section class="positioning-section">
+      <h2>Positioning</h2>
+      <div class="position-container">
+        <div class="static">Static</div>
+        <div class="relative">Relative</div>
+        <div class="absolute">Absolute</div>
+        <div class="fixed">Fixed</div>
+        <div class="sticky">Sticky</div>
+      </div>
+    </section>
+
+    <!-- Flexbox Section -->
+    <section class="flexbox-section">
+      <h2>Flexbox</h2>
+      <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </section>
+
+    <!-- Grid Section -->
+    <section class="grid-section">
+      <h2>Grid</h2>
+      <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+      </div>
+    </section>
+
+    <!-- Responsive Design Section -->
+    <section class="responsive-section">
+      <h2>Responsive Design</h2>
+      <div class="responsive-demo">
+        <p>This section demonstrates responsive design</p>
+      </div>
+    </section>
+
+    <!-- Transitions and Animations Section -->
+    <section class="animations-section">
+      <h2>Transitions & Animations</h2>
+      <div class="transition-demo">Hover me!</div>
+      <div class="animation-demo">Animated element</div>
+    </section>
+
+    <!-- Typography Section -->
+    <section class="typography-section">
+      <h2>Typography</h2>
+      <p class="font-demo">Font styles demonstration</p>
+      <p class="text-demo">Text formatting demonstration</p>
+    </section>
+
+    <!-- Color Systems Section -->
+    <section class="colors-section">
+      <h2>Color Systems</h2>
+      <div class="color-demo">
+        <div class="color-hex">HEX</div>
+        <div class="color-rgb">RGB</div>
+        <div class="color-hsl">HSL</div>
+      </div>
+    </section>
+
+    <!-- Z-index Section -->
+    <section class="zindex-section">
+      <h2>Z-index & Stacking</h2>
+      <div class="stacking-container">
+        <div class="stack-item layer-1">Layer 1</div>
+        <div class="stack-item layer-2">Layer 2</div>
+        <div class="stack-item layer-3">Layer 3</div>
+      </div>
+    </section>
+
+    <!-- Image Handling Section -->
+    <section class="image-section">
+      <h2>Image Handling</h2>
+      <div class="image-demo">
+        <div class="image-container">
+          <img
+            src="https://picsum.photos/400/300"
+            alt="Random image from Picsum"
+            class="basic-image"
+          />
+          <div class="image-overlay">
+            <p>Hover to see overlay</p>
+          </div>
+        </div>
+
+        <div class="image-gallery">
+          <img
+            src="https://picsum.photos/200/200?random=1"
+            alt="Gallery image 1"
+            class="gallery-image"
+          />
+          <img
+            src="https://picsum.photos/200/200?random=2"
+            alt="Gallery image 2"
+            class="gallery-image"
+          />
+          <img
+            src="https://picsum.photos/200/200?random=3"
+            alt="Gallery image 3"
+            class="gallery-image"
+          />
+        </div>
+
+        <div class="image-shapes">
+          <div class="image-circle">
+            <img
+              src="https://picsum.photos/200/200?random=4"
+              alt="Circular image"
+            />
+          </div>
+          <div class="image-clip-path">
+            <img
+              src="https://picsum.photos/200/200?random=5"
+              alt="Clipped image"
+            />
+          </div>
+        </div>
+
+        <div class="image-responsive">
+          <img
+            src="https://picsum.photos/800/400"
+            alt="Responsive image"
+            class="responsive-img"
+          />
+        </div>
+
+        <div class="image-lazy-loading">
+          <img
+            src="https://picsum.photos/400/300?random=6"
+            alt="Lazy loaded image"
+            loading="lazy"
+            class="lazy-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Handling Section -->
+    <section class="video-section">
+      <h2>Video Handling</h2>
+      <div class="video-demo">
+        <div class="video-container">
+          <video class="basic-video" controls>
+            <source
+              src="https://videos.pexels.com/video-files/7102266/7102266-hd_1920_1080_30fps.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="video-responsive">
+          <video class="responsive-video" controls>
+            <source
+              src="https://videos.pexels.com/video-files/7102266/7102266-hd_1920_1080_30fps.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="video-overlay">
+          <video class="overlay-video" autoplay muted loop>
+            <source
+              src="https://videos.pexels.com/video-files/7102266/7102266-hd_1920_1080_30fps.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-content">
+            <h3>Video Overlay Content</h3>
+            <p>This content appears on top of the video</p>
+          </div>
+        </div>
+
+        <div class="video-poster">
+          <video
+            class="poster-video"
+            controls
+            poster="https://picsum.photos/800/450"
+          >
+            <source
+              src="https://videos.pexels.com/video-files/7102266/7102266-hd_1920_1080_30fps.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- iframe Handling Section -->
+    <section class="iframe-section">
+      <h2>iframe Handling</h2>
+      <div class="iframe-demo">
+        <div class="iframe-container">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="YouTube video player"
+            class="basic-iframe"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+
+        <div class="iframe-responsive">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30591910525!2d-74.25986432970718!3d40.69714942212336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1647043439260!5m2!1sen!2s"
+            class="responsive-iframe"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+
+        <div class="iframe-overlay">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="YouTube video player"
+            class="overlay-iframe"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
+          <div class="iframe-content">
+            <h3>iframe Overlay Content</h3>
+            <p>This content appears on top of the iframe</p>
+          </div>
+        </div>
+
+        <div class="iframe-aspect-ratio">
+          <div class="aspect-ratio-container">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="YouTube video player"
+              class="aspect-ratio-iframe"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </div>
+
+        <div class="iframe-lazy-loading">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="YouTube video player"
+            class="lazy-iframe"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

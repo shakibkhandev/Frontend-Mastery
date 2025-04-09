@@ -1,0 +1,1618 @@
+/* CSS Crash Course - A Comprehensive Guide */
+
+/* ==========================================================================
+   CSS Custom Properties (Variables)
+   ========================================================================== */
+:root {
+  /* Color Variables */
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --text-color: #333;
+  --background-color: #f5f5f5;
+
+  /* Spacing Variables */
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+
+  /* Font Variables */
+  --font-primary: "Arial", sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+
+  /* Shadow Variables */
+  --shadow-small: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-large: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+  /* Border Radius Variables */
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 16px;
+
+  /* Transition Variables */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ==========================================================================
+   CSS Reset and Base Styles
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding: var(--spacing-medium);
+}
+
+/* ==========================================================================
+   Selectors
+   ========================================================================== */
+/* Type Selector - targets all elements of a specific type */
+p {
+  margin-bottom: var(--spacing-small);
+}
+
+/* Class Selector - targets elements with specific class */
+.class-selector {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* ID Selector - targets a specific element by ID */
+#id-selector {
+  color: var(--secondary-color);
+  font-style: italic;
+}
+
+/* Attribute Selector - targets elements with specific attributes */
+[data-attribute="demo"] {
+  border: 1px solid var(--primary-color);
+  padding: var(--spacing-small);
+}
+
+/* Pseudo-class Selector - targets elements in specific states */
+.pseudo-demo:hover {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+/* Pseudo-element Selector - targets specific parts of elements */
+.pseudo-element-demo::before {
+  content: "→ ";
+  color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Box Model
+   ========================================================================== */
+.box-model-demo {
+  /* Margin - space outside the element */
+  margin: var(--spacing-large);
+
+  /* Border - the edge of the element */
+  border: 2px solid var(--primary-color);
+
+  /* Padding - space inside the element */
+  padding: var(--spacing-medium);
+
+  /* Content - the actual element content */
+  background-color: white;
+}
+
+/* ==========================================================================
+   Positioning
+   ========================================================================== */
+.position-container {
+  position: relative;
+  height: 300px;
+  border: 1px solid #ccc;
+  margin: var(--spacing-large) 0;
+}
+
+/* Static - default positioning */
+.static {
+  position: static;
+  background-color: #f1f1f1;
+  padding: var(--spacing-small);
+}
+
+/* Relative - positioned relative to its normal position */
+.relative {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  background-color: #e1e1e1;
+  padding: var(--spacing-small);
+}
+
+/* Absolute - positioned relative to nearest positioned ancestor */
+.absolute {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  background-color: #d1d1d1;
+  padding: var(--spacing-small);
+}
+
+/* Fixed - positioned relative to viewport */
+.fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #c1c1c1;
+  padding: var(--spacing-small);
+  z-index: 1000;
+}
+
+/* Sticky - toggles between relative and fixed */
+.sticky {
+  position: sticky;
+  top: 0;
+  background-color: #b1b1b1;
+  padding: var(--spacing-small);
+}
+
+/* ==========================================================================
+   Flexbox Layout
+   ========================================================================== */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-medium);
+  padding: var(--spacing-medium);
+  background-color: white;
+  margin: var(--spacing-medium) 0;
+}
+
+.flex-item {
+  flex: 1;
+  padding: var(--spacing-medium);
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Grid Layout
+   ========================================================================== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-medium);
+  padding: var(--spacing-medium);
+  background-color: white;
+  margin: var(--spacing-medium) 0;
+}
+
+.grid-item {
+  padding: var(--spacing-medium);
+  background-color: var(--secondary-color);
+  color: white;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+/* Mobile First Approach */
+.responsive-demo {
+  width: 100%;
+  padding: var(--spacing-medium);
+  background-color: white;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .responsive-demo {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .responsive-demo {
+    max-width: 960px;
+  }
+}
+
+/* ==========================================================================
+   Transitions and Animations
+   ========================================================================== */
+/* Transitions */
+.transition-demo {
+  padding: var(--spacing-medium);
+  background-color: var(--primary-color);
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.transition-demo:hover {
+  transform: scale(1.1);
+  background-color: var(--secondary-color);
+}
+
+/* Animations */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animation-demo {
+  padding: var(--spacing-medium);
+  background-color: var(--secondary-color);
+  color: white;
+  animation: bounce 2s infinite;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+.font-demo {
+  font-family: "Georgia", serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.text-demo {
+  text-align: justify;
+  text-decoration: underline;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  line-height: 2;
+}
+
+/* ==========================================================================
+   Color Systems
+   ========================================================================== */
+.color-demo {
+  display: flex;
+  gap: var(--spacing-medium);
+  margin: var(--spacing-medium) 0;
+}
+
+.color-hex {
+  background-color: #ff0000;
+  padding: var(--spacing-medium);
+  color: white;
+}
+
+.color-rgb {
+  background-color: rgb(0, 255, 0);
+  padding: var(--spacing-medium);
+  color: white;
+}
+
+.color-hsl {
+  background-color: hsl(240, 100%, 50%);
+  padding: var(--spacing-medium);
+  color: white;
+}
+
+/* ==========================================================================
+   Z-index and Stacking Context
+   ========================================================================== */
+.stacking-container {
+  position: relative;
+  height: 200px;
+  margin: var(--spacing-large) 0;
+}
+
+.stack-item {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.layer-1 {
+  background-color: rgba(255, 0, 0, 0.8);
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.layer-2 {
+  background-color: rgba(0, 255, 0, 0.8);
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+}
+
+.layer-3 {
+  background-color: rgba(0, 0, 255, 0.8);
+  z-index: 3;
+  top: 40px;
+  left: 40px;
+}
+
+/* ==========================================================================
+   Best Practices for Performance and Maintainability
+   ========================================================================== */
+/* Use shorthand properties */
+.performance-demo {
+  /* Instead of */
+  /* margin-top: 10px;
+       margin-right: 20px;
+       margin-bottom: 10px;
+       margin-left: 20px; */
+
+  /* Use */
+  margin: 10px 20px;
+
+  /* Instead of */
+  /* padding-top: 10px;
+       padding-right: 10px;
+       padding-bottom: 10px;
+       padding-left: 10px; */
+
+  /* Use */
+  padding: 10px;
+}
+
+/* Use modern CSS features */
+.modern-css {
+  /* Use CSS Grid for layouts */
+  display: grid;
+
+  /* Use CSS Custom Properties for theming */
+  color: var(--primary-color);
+
+  /* Use modern selectors */
+  &:hover {
+    color: var(--secondary-color);
+  }
+}
+
+/* Use appropriate units */
+.units-demo {
+  /* Use rem for font sizes */
+  font-size: 1rem;
+
+  /* Use em for component-specific spacing */
+  padding: 1em;
+
+  /* Use % for responsive widths */
+  width: 100%;
+
+  /* Use vh/vw for viewport-based sizing */
+  min-height: 50vh;
+}
+
+/* Use meaningful class names */
+.semantic-class {
+  /* Use BEM naming convention */
+  /* Block__Element--Modifier */
+  .card__title--large {
+    font-size: 1.5rem;
+  }
+
+  .card__content {
+    padding: var(--spacing-medium);
+  }
+}
+
+/* ==========================================================================
+   Advanced Selectors
+   ========================================================================== */
+/* Child Selectors */
+.advanced-selectors > p {
+  /* Direct child selector - only selects direct children */
+  border-left: 3px solid var(--primary-color);
+  padding-left: var(--spacing-small);
+}
+
+/* Adjacent Sibling Selector */
+.advanced-selectors h3 + p {
+  /* Selects p that immediately follows h3 */
+  margin-top: 0;
+  font-weight: bold;
+}
+
+/* General Sibling Selector */
+.advanced-selectors h3 ~ p {
+  /* Selects all p elements that follow h3 */
+  color: var(--secondary-color);
+}
+
+/* Attribute Selectors with Patterns */
+[class^="btn-"] {
+  /* Selects elements whose class attribute begins with "btn-" */
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-small);
+}
+
+[class$="-primary"] {
+  /* Selects elements whose class attribute ends with "-primary" */
+  background-color: var(--primary-color);
+  color: white;
+}
+
+[class*="card"] {
+  /* Selects elements whose class attribute contains "card" */
+  border: 1px solid #ddd;
+  border-radius: var(--radius-medium);
+  padding: var(--spacing-medium);
+}
+
+/* ==========================================================================
+   CSS Filters and Effects
+   ========================================================================== */
+.filter-demo {
+  /* Basic Filters */
+  filter: grayscale(50%);
+  transition: filter var(--transition-medium);
+}
+
+.filter-demo:hover {
+  filter: grayscale(0%);
+}
+
+/* Multiple Filters */
+.filter-complex {
+  filter: brightness(1.2) contrast(1.1) saturate(1.3);
+}
+
+/* Backdrop Filter - applies filter to area behind element */
+.backdrop-filter-demo {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  padding: var(--spacing-medium);
+  border-radius: var(--radius-medium);
+}
+
+/* ==========================================================================
+   CSS Shapes and Clipping
+   ========================================================================== */
+/* Basic Shapes */
+.shape-circle {
+  width: 100px;
+  height: 100px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 86.6px solid var(--secondary-color);
+}
+
+/* Clip Path */
+.clip-path-demo {
+  width: 200px;
+  height: 200px;
+  background-color: var(--primary-color);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* ==========================================================================
+   CSS Masks
+   ========================================================================== */
+.mask-demo {
+  width: 200px;
+  height: 200px;
+  background-color: var(--primary-color);
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40"/></svg>');
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40"/></svg>');
+}
+
+/* ==========================================================================
+   CSS Grid Advanced Features
+   ========================================================================== */
+.grid-advanced {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+  gap: var(--spacing-medium);
+}
+
+.grid-header {
+  grid-area: header;
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-medium);
+}
+
+.grid-sidebar {
+  grid-area: sidebar;
+  background-color: #f0f0f0;
+  padding: var(--spacing-medium);
+}
+
+.grid-main {
+  grid-area: main;
+  background-color: white;
+  padding: var(--spacing-medium);
+}
+
+.grid-footer {
+  grid-area: footer;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: var(--spacing-medium);
+}
+
+/* ==========================================================================
+   CSS Custom Properties Advanced Usage
+   ========================================================================== */
+.theme-light {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --card-bg: #f5f5f5;
+  --card-shadow: var(--shadow-small);
+}
+
+.theme-dark {
+  --bg-color: #1a1a1a;
+  --text-color: #f5f5f5;
+  --card-bg: #2a2a2a;
+  --card-shadow: var(--shadow-large);
+}
+
+/* Theme Switching Example */
+.theme-container {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-medium),
+    color var(--transition-medium);
+}
+
+.theme-card {
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  padding: var(--spacing-medium);
+  border-radius: var(--radius-medium);
+  transition: background-color var(--transition-medium),
+    box-shadow var(--transition-medium);
+}
+
+/* ==========================================================================
+   CSS Logical Properties
+   ========================================================================== */
+.logical-properties {
+  /* Instead of left/right, use logical properties */
+  margin-inline: var(--spacing-medium);
+  padding-inline: var(--spacing-medium);
+
+  /* Instead of top/bottom */
+  margin-block: var(--spacing-medium);
+  padding-block: var(--spacing-medium);
+
+  /* For borders */
+  border-inline: 1px solid var(--primary-color);
+  border-block: 1px solid var(--secondary-color);
+
+  /* For positioning */
+  inset-inline: 0;
+  inset-block: 0;
+}
+
+/* ==========================================================================
+   CSS Container Queries
+   ========================================================================== */
+.container-query-demo {
+  container-type: inline-size;
+  container-name: card;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@container card (min-width: 400px) {
+  .container-query-demo {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-medium);
+  }
+}
+
+/* ==========================================================================
+   CSS Scroll Snap
+   ========================================================================== */
+.scroll-snap-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: var(--spacing-medium);
+  padding: var(--spacing-medium);
+}
+
+.scroll-snap-item {
+  flex: 0 0 300px;
+  height: 200px;
+  scroll-snap-align: start;
+  background-color: var(--primary-color);
+  border-radius: var(--radius-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* ==========================================================================
+   CSS Print Styles
+   ========================================================================== */
+@media print {
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: black;
+    background: white;
+  }
+
+  .no-print {
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+}
+
+/* ==========================================================================
+   CSS Performance Optimization
+   ========================================================================== */
+/* Use will-change for elements that will animate */
+.optimize-animation {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* Use content-visibility for off-screen content */
+.optimize-rendering {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* Use contain property to limit layout recalculations */
+.optimize-layout {
+  contain: content;
+}
+
+/* Use hardware acceleration for animations */
+.optimize-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* ==========================================================================
+   CSS Accessibility
+   ========================================================================== */
+/* Focus styles for keyboard navigation */
+:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .high-contrast {
+    border: 2px solid CanvasText;
+    background-color: Canvas;
+    color: CanvasText;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Image Handling
+   ========================================================================== */
+.image-section {
+  margin: var(--spacing-large) 0;
+  padding: var(--spacing-medium);
+  background-color: white;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-small);
+}
+
+.image-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-large);
+  margin-top: var(--spacing-medium);
+}
+
+/* Basic Image Styling */
+.basic-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-medium);
+  transition: transform var(--transition-medium);
+}
+
+.basic-image:hover {
+  transform: scale(1.05);
+}
+
+/* Image with Overlay */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-small);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-overlay p {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: var(--spacing-medium);
+}
+
+/* Image Gallery */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-small);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-small);
+  transition: transform var(--transition-medium),
+    filter var(--transition-medium);
+}
+
+.gallery-image:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  z-index: 1;
+}
+
+/* Image Shapes */
+.image-shapes {
+  display: flex;
+  gap: var(--spacing-medium);
+  justify-content: center;
+  align-items: center;
+}
+
+.image-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+.image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-clip-path {
+  width: 200px;
+  height: 200px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+.image-clip-path img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive Images */
+.image-responsive {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Lazy Loading Images */
+.image-lazy-loading {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.lazy-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-small);
+  transition: opacity var(--transition-medium);
+}
+
+/* Image Filters */
+.image-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-medium);
+  margin-top: var(--spacing-medium);
+}
+
+.filter-grayscale img {
+  filter: grayscale(100%);
+  transition: filter var(--transition-medium);
+}
+
+.filter-grayscale img:hover {
+  filter: grayscale(0%);
+}
+
+.filter-blur img {
+  filter: blur(3px);
+  transition: filter var(--transition-medium);
+}
+
+.filter-blur img:hover {
+  filter: blur(0);
+}
+
+.filter-brightness img {
+  filter: brightness(150%);
+  transition: filter var(--transition-medium);
+}
+
+.filter-brightness img:hover {
+  filter: brightness(100%);
+}
+
+/* Image Object Fit */
+.object-fit-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-medium);
+  margin-top: var(--spacing-medium);
+}
+
+.fit-cover img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-small);
+}
+
+.fit-contain img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background-color: #f0f0f0;
+  border-radius: var(--radius-small);
+}
+
+.fit-fill img {
+  width: 100%;
+  height: 200px;
+  object-fit: fill;
+  border-radius: var(--radius-small);
+}
+
+/* ==========================================================================
+   Video Handling
+   ========================================================================== */
+.video-section {
+  margin: var(--spacing-large) 0;
+  padding: var(--spacing-medium);
+  background-color: white;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-small);
+}
+
+.video-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-large);
+  margin-top: var(--spacing-medium);
+}
+
+/* Basic Video Styling */
+.video-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.basic-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Responsive Video */
+.video-responsive {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.responsive-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Video with Overlay Content */
+.video-overlay {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: var(--radius-small);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+.overlay-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-medium);
+}
+
+/* Video with Poster */
+.video-poster {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.poster-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Video Controls Styling */
+video::-webkit-media-controls {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 var(--radius-small) var(--radius-small);
+}
+
+video::-webkit-media-controls-panel {
+  padding: 0 var(--spacing-small);
+}
+
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-timeline,
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display,
+video::-webkit-media-controls-mute-button,
+video::-webkit-media-controls-volume-slider {
+  color: white;
+}
+
+/* Video Autoplay with Mute */
+.autoplay-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Video Background */
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-large);
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -1;
+}
+
+.video-background-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: var(--spacing-medium);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Video Thumbnails */
+.video-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-small);
+  margin-top: var(--spacing-medium);
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  border-radius: var(--radius-small);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-small);
+  transition: transform var(--transition-medium);
+}
+
+.video-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.video-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-thumbnail::after {
+  content: "▶";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Video Loading States */
+.video-loading {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: var(--radius-small);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+.video-loading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  z-index: 1;
+}
+
+.video-loading::after {
+  content: "Loading...";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Video Fallback */
+.video-fallback {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: var(--radius-small);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.video-fallback p {
+  color: #666;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   iframe Handling
+   ========================================================================== */
+.iframe-section {
+  margin: var(--spacing-large) 0;
+  padding: var(--spacing-medium);
+  background-color: white;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-small);
+}
+
+.iframe-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-large);
+  margin-top: var(--spacing-medium);
+}
+
+/* Basic iframe Styling */
+.iframe-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.basic-iframe {
+  width: 100%;
+  height: 315px; /* Fixed height for 16:9 aspect ratio */
+  display: block;
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-medium);
+  border: none;
+}
+
+/* Responsive iframe */
+.iframe-responsive {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.responsive-iframe {
+  width: 100%;
+  height: 450px;
+  display: block;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-medium);
+  border: none;
+}
+
+/* iframe with Overlay Content */
+.iframe-overlay {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: var(--radius-small);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+.overlay-iframe {
+  width: 100%;
+  height: 315px;
+  display: block;
+  border: none;
+}
+
+.iframe-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-medium);
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.iframe-overlay:hover .iframe-content {
+  opacity: 1;
+}
+
+/* iframe with Aspect Ratio */
+.iframe-aspect-ratio {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.aspect-ratio-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (9/16 = 0.5625) */
+  border-radius: var(--radius-small);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+.aspect-ratio-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Lazy Loading iframe */
+.iframe-lazy-loading {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.lazy-iframe {
+  width: 100%;
+  height: 315px;
+  display: block;
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-small);
+  border: none;
+  transition: opacity var(--transition-medium);
+}
+
+/* iframe with Custom Controls */
+.iframe-custom-controls {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: var(--radius-small);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+.custom-controls-iframe {
+  width: 100%;
+  height: 315px;
+  display: block;
+  border: none;
+}
+
+.iframe-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-small);
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.iframe-custom-controls:hover .iframe-controls {
+  opacity: 1;
+}
+
+.iframe-control-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0 var(--spacing-small);
+}
+
+.iframe-control-progress {
+  flex: 1;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 var(--spacing-small);
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+.iframe-control-progress::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+/* iframe with Loading State */
+.iframe-loading {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: var(--radius-small);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  background-color: #f0f0f0;
+  min-height: 315px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iframe-loading::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* iframe with Fallback */
+.iframe-fallback {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: var(--radius-small);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  background-color: #f0f0f0;
+  min-height: 315px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: var(--spacing-medium);
+  text-align: center;
+}
+
+.iframe-fallback p {
+  color: #666;
+  font-style: italic;
+  margin-bottom: var(--spacing-small);
+}
+
+.iframe-fallback-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: var(--spacing-small) var(--spacing-medium);
+  border-radius: var(--radius-small);
+  cursor: pointer;
+  transition: background-color var(--transition-medium);
+}
+
+.iframe-fallback-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* iframe with Multiple Sources */
+.iframe-multiple-sources {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.iframe-source-tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: var(--spacing-small);
+}
+
+.iframe-source-tab {
+  padding: var(--spacing-small) var(--spacing-medium);
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: var(--radius-small) var(--radius-small) 0 0;
+  background-color: #f5f5f5;
+  transition: background-color var(--transition-medium);
+}
+
+.iframe-source-tab.active {
+  background-color: white;
+  border-color: #ddd;
+  border-bottom-color: white;
+  margin-bottom: -1px;
+}
+
+.iframe-source-content {
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 var(--radius-small) var(--radius-small);
+  overflow: hidden;
+}
+
+.multiple-sources-iframe {
+  width: 100%;
+  height: 315px;
+  display: block;
+  border: none;
+}
+
+/* iframe with Responsive Height */
+.iframe-responsive-height {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.responsive-height-iframe {
+  width: 100%;
+  height: 100vh;
+  max-height: 600px;
+  display: block;
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-medium);
+  border: none;
+}
+
+/* iframe with Custom Border */
+.iframe-custom-border {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-large);
+}
+
+.custom-border-iframe {
+  width: 100%;
+  height: 315px;
+  display: block;
+  border: none;
+  border-radius: var(--radius-small);
+  background-color: white;
+}
+
+/* iframe with Hover Effect */
+.iframe-hover-effect {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: transform var(--transition-medium),
+    box-shadow var(--transition-medium);
+}
+
+.hover-effect-iframe {
+  width: 100%;
+  height: 315px;
+  display: block;
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-medium);
+  border: none;
+}
+
+.iframe-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-large);
+}

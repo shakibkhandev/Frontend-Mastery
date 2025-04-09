@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+        META TAGS SECTION
+        These tags provide essential information about the document and help with SEO
+        - charset: Specifies character encoding
+        - viewport: Ensures proper rendering on mobile devices
+        - description: Important for SEO and search results
+        - keywords: Helps with search engine indexing
+        - author: Specifies content creator
+        - robots: Controls search engine crawling behavior
+    -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A comprehensive HTML crash course covering essential tags, semantic elements, and best practices"
+    />
+    <meta
+      name="keywords"
+      content="HTML, web development, tutorial, semantic HTML, accessibility"
+    />
+    <meta name="author" content="Your Name" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph meta tags for better social media sharing -->
+    <meta property="og:title" content="HTML Crash Course" />
+    <meta
+      property="og:description"
+      content="Learn HTML fundamentals and best practices"
+    />
+    <meta property="og:image" content="path/to/image.jpg" />
+    <meta
+      property="og:url"
+      content="https://yourwebsite.com/html-crash-course"
+    />
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HTML Crash Course" />
+    <meta
+      name="twitter:description"
+      content="Learn HTML fundamentals and best practices"
+    />
+
+    <title>HTML Crash Course | Complete Guide</title>
+
+    <!-- 
+        STYLES SECTION
+        Demonstrates different ways to include CSS
+    -->
+    <style>
+      /* Internal CSS example */
+      .highlight {
+        background-color: yellow;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 
+        HEADER SECTION
+        Demonstrates semantic header elements and navigation
+        - header: Represents introductory content
+        - nav: Contains navigation links
+        - aria-label: Improves accessibility
+    -->
+    <header class="main-header">
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#basics">HTML Basics</a></li>
+          <li><a href="#semantic">Semantic HTML</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#forms">Forms</a></li>
+          <li><a href="#tables">Tables</a></li>
+          <li><a href="#media">Media</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 
+        MAIN CONTENT SECTION
+        Shows different heading levels and basic text formatting
+        - main: Represents the main content area
+        - section: Groups related content
+        - article: Represents self-contained content
+    -->
+    <main>
+      <section id="basics" aria-labelledby="basics-heading">
+        <h1 id="basics-heading">HTML Basics</h1>
+
+        <!-- Text Formatting Examples -->
+        <h2>Text Formatting</h2>
+        <p>
+          This is a <strong>paragraph</strong> with <em>emphasized</em> text.
+          Here's some <mark>highlighted</mark> text and a
+          <code>code snippet</code>.
+        </p>
+        <p>
+          <abbr title="HyperText Markup Language">HTML</abbr> is the standard
+          markup language for creating web pages.
+        </p>
+        <p>
+          <cite>The HTML Specification</cite> defines the structure of web
+          pages.
+        </p>
+        <p>
+          <time datetime="2024-03-20">March 20, 2024</time>
+        </p>
+
+        <!-- Additional Text Formatting Tags -->
+        <h3>More Text Formatting Tags</h3>
+        <p>
+          <b>Bold text</b> and <i>italic text</i> using basic tags.<br>
+          <u>Underlined text</u> and <s>strikethrough text</s>.<br>
+          <sub>Subscript</sub> and <sup>superscript</sup> text.<br>
+          <small>Small text</small> and <big>big text</big>.<br>
+          <q>Inline quotation</q> and <blockquote>Block quotation</blockquote>
+        </p>
+
+        <!-- Text Direction and Language -->
+        <h3>Text Direction and Language</h3>
+        <p>
+          <bdo dir="rtl">This text will be displayed right-to-left</bdo><br>
+          <span lang="fr">Bonjour le monde!</span><br>
+          <span lang="es">¡Hola mundo!</span>
+        </p>
+
+        <!-- Preformatted Text -->
+        <h3>Preformatted Text</h3>
+        <pre>
+          This is preformatted text.
+          It preserves both spaces and
+          line breaks.
+        </pre>
+
+        <!-- Lists Examples -->
+        <h2>Lists</h2>
+        <ul>
+          <li>Unordered list item 1</li>
+          <li>Unordered list item 2</li>
+          <li>
+            Nested list
+            <ul>
+              <li>Sub-item 1</li>
+              <li>Sub-item 2</li>
+            </ul>
+          </li>
+        </ul>
+
+        <ol>
+          <li>Ordered list item 1</li>
+          <li>Ordered list item 2</li>
+          <li>
+            Nested ordered list
+            <ol>
+              <li>Sub-item 1</li>
+              <li>Sub-item 2</li>
+            </ol>
+          </li>
+        </ol>
+
+        <dl>
+          <dt>Definition Term</dt>
+          <dd>Definition description</dd>
+          <dt>Another Term</dt>
+          <dd>Another description</dd>
+        </dl>
+      </section>
+
+      <!-- 
+            SEMANTIC HTML SECTION
+            Demonstrates proper use of semantic elements
+            - article: Self-contained content
+            - section: Thematic grouping
+            - aside: Sidebar content
+            - figure: Self-contained content like images
+      -->
+      <section id="semantic" aria-labelledby="semantic-heading">
+        <h2 id="semantic-heading">Semantic HTML</h2>
+
+        <!-- Additional Semantic Elements -->
+        <h3>More Semantic Elements</h3>
+        <article class="blog-post">
+          <header>
+            <h4>Article Header</h4>
+            <nav>
+              <ul>
+                <li><a href="#section1">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+              </ul>
+            </nav>
+          </header>
+          
+          <section id="section1">
+            <h5>Section 1</h5>
+            <p>Content for section 1...</p>
+          </section>
+
+          <section id="section2">
+            <h5>Section 2</h5>
+            <p>Content for section 2...</p>
+          </section>
+
+          <footer>
+            <p>Article footer content</p>
+          </footer>
+        </article>
+
+        <!-- Details and Summary -->
+        <h3>Details and Summary</h3>
+        <details>
+          <summary>Click to expand</summary>
+          <p>This is the detailed content that can be shown or hidden.</p>
+        </details>
+
+        <!-- Progress and Meter -->
+        <h3>Progress and Meter</h3>
+        <p>Download progress: <progress value="70" max="100">70%</progress></p>
+        <p>Disk usage: <meter value="0.6" min="0" max="1" low="0.3" high="0.7" optimum="0.5">60%</meter></p>
+
+        <!-- Dialog -->
+        <h3>Dialog</h3>
+        <dialog open>
+          This is a dialog box
+        </dialog>
+
+        <figure class="image-container">
+          <img
+            src="placeholder.jpg"
+            alt="Description of image"
+            width="300"
+            height="200"
+            loading="lazy"
+          />
+          <figcaption>Image caption goes here</figcaption>
+        </figure>
+      </section>
+
+      <!-- 
+            FORMS SECTION
+            Shows proper form structure and accessibility
+            - form: Container for form elements
+            - fieldset: Groups related form elements
+            - legend: Provides caption for fieldset
+            - label: Associates text with form controls
+      -->
+      <section id="forms" aria-labelledby="forms-heading">
+        <h2 id="forms-heading">Forms</h2>
+
+        <!-- Additional Form Elements -->
+        <h3>More Form Elements</h3>
+        <form action="/submit" method="POST" class="advanced-form">
+          <!-- Datalist -->
+          <div class="form-group">
+            <label for="browser">Choose your browser:</label>
+            <input list="browsers" name="browser" id="browser">
+            <datalist id="browsers">
+              <option value="Chrome">
+              <option value="Firefox">
+              <option value="Safari">
+              <option value="Edge">
+            </datalist>
+          </div>
+
+          <!-- Output -->
+          <div class="form-group">
+            <label for="x">X:</label>
+            <input type="number" id="x" name="x" value="50">
+            <label for="y">Y:</label>
+            <input type="number" id="y" name="y" value="50">
+            <output name="result" for="x y">100</output>
+          </div>
+
+          <fieldset>
+            <legend>Personal Information</legend>
+
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                aria-required="true"
+                placeholder="Enter your name"
+                minlength="2"
+                maxlength="50"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                aria-required="true"
+                placeholder="Enter your email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                aria-required="true"
+                placeholder="Your message"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="preference">Preference:</label>
+              <select id="preference" name="preference">
+                <option value="">Select an option</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <fieldset>
+                <legend>Choose your interests:</legend>
+                <input type="checkbox" id="html" name="interest" value="html" />
+                <label for="html">HTML</label>
+                <input type="checkbox" id="css" name="interest" value="css" />
+                <label for="css">CSS</label>
+              </fieldset>
+            </div>
+
+            <div class="form-group">
+              <fieldset>
+                <legend>Select your experience level:</legend>
+                <input
+                  type="radio"
+                  id="beginner"
+                  name="level"
+                  value="beginner"
+                />
+                <label for="beginner">Beginner</label>
+                <input
+                  type="radio"
+                  id="intermediate"
+                  name="level"
+                  value="intermediate"
+                />
+                <label for="intermediate">Intermediate</label>
+              </fieldset>
+            </div>
+
+            <!-- Additional Input Types -->
+            <div class="form-group">
+              <label for="birthdate">Birth Date:</label>
+              <input type="date" id="birthdate" name="birthdate" />
+            </div>
+
+            <div class="form-group">
+              <label for="age">Age:</label>
+              <input type="number" id="age" name="age" min="0" max="120" />
+            </div>
+
+            <div class="form-group">
+              <label for="website">Website:</label>
+              <input
+                type="url"
+                id="website"
+                name="website"
+                placeholder="https://example.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number:</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                placeholder="123-456-7890"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="color">Favorite Color:</label>
+              <input type="color" id="color" name="color" />
+            </div>
+
+            <div class="form-group">
+              <label for="range">Skill Level (1-10):</label>
+              <input type="range" id="range" name="range" min="1" max="10" />
+            </div>
+
+            <div class="form-group">
+              <label for="file">Upload Resume:</label>
+              <input
+                type="file"
+                id="file"
+                name="file"
+                accept=".pdf,.doc,.docx"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="search">Search:</label>
+              <input
+                type="search"
+                id="search"
+                name="search"
+                placeholder="Search..."
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="time">Preferred Meeting Time:</label>
+              <input type="time" id="time" name="time" />
+            </div>
+
+            <div class="form-group">
+              <label for="datetime">Appointment:</label>
+              <input type="datetime-local" id="datetime" name="datetime" />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                minlength="8"
+              />
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- 
+            TABLES SECTION
+            Demonstrates proper table structure
+            - table: Container for tabular data
+            - thead: Groups header content
+            - tbody: Groups body content
+            - caption: Provides table description
+      -->
+      <section id="tables" aria-labelledby="tables-heading">
+        <h2 id="tables-heading">Tables</h2>
+
+        <table class="data-table">
+          <caption>
+            Sample Table with Complex Structure
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Header 1</th>
+              <th scope="col">Header 2</th>
+              <th scope="col">Header 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data 1</td>
+              <td>Data 2</td>
+              <td>Data 3</td>
+            </tr>
+            <tr>
+              <td colspan="2">Spans two columns</td>
+              <td>Data 3</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Table footer</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <!-- 
+            MEDIA SECTION
+            Demonstrates embedding various media types
+            - video: For video content
+            - audio: For audio content
+            - iframe: For external content
+      -->
+      <section id="media" aria-labelledby="media-heading">
+        <h2 id="media-heading">Media Elements</h2>
+
+        <!-- Additional Media Elements -->
+        <h3>More Media Elements</h3>
+        <div class="advanced-media-container">
+          <!-- Picture Element -->
+          <picture>
+            <source media="(min-width: 800px)" srcset="large-image.jpg">
+            <source media="(min-width: 400px)" srcset="medium-image.jpg">
+            <img src="small-image.jpg" alt="Responsive image">
+          </picture>
+
+          <!-- Track Element -->
+          <video controls width="320" height="240">
+            <source src="video.mp4" type="video/mp4">
+            <track kind="subtitles" src="subtitles_en.vtt" srclang="en" label="English">
+            <track kind="captions" src="captions_en.vtt" srclang="en" label="English">
+            Your browser does not support the video tag.
+          </video>
+
+          <!-- Map and Area -->
+          <img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+          <map name="workmap">
+            <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+            <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+            <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+          </map>
+
+          <!-- Existing media content -->
+          <audio controls>
+            <source src="audio.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+
+          <iframe
+            src="https://www.example.com"
+            title="Example Website"
+            width="600"
+            height="400"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <!-- 
+        FOOTER SECTION
+        Shows proper footer structure
+        - footer: Contains footer information
+        - small: For fine print
+    -->
+    <footer class="main-footer">
+      <p>&copy; 2024 HTML Crash Course. All rights reserved.</p>
+      <small
+        >Last updated: <time datetime="2024-03-20">March 20, 2024</time></small
+      >
+    </footer>
+
+    <!-- 
+        SCRIPTS SECTION
+        Demonstrates proper script loading
+        - defer: Loads script after page parsing
+        - async: Loads script asynchronously
+    -->
+    <script src="script.js" defer></script>
+  </body>
+</html>

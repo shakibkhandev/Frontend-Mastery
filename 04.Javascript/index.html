@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Crash Course</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      .output {
+        background-color: #f0f0f0;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+      }
+      button {
+        padding: 8px 16px;
+        margin: 5px;
+        cursor: pointer;
+      }
+      .form-container {
+        margin: 20px 0;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Crash Course</h1>
+
+    <!-- DOM Manipulation Examples -->
+    <div id="dom-example">
+      <h2>DOM Manipulation</h2>
+      <p id="change-text">This text will be changed</p>
+      <button id="change-color">Change Color</button>
+    </div>
+
+    <!-- Event Handling Examples -->
+    <div id="event-example">
+      <h2>Event Handling</h2>
+      <button id="click-me">Click Me!</button>
+      <div id="event-output" class="output"></div>
+    </div>
+
+    <!-- Form Handling Example -->
+    <div class="form-container">
+      <h2>Form Handling</h2>
+      <form id="demo-form">
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" id="username" required />
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" required />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="form-output" class="output"></div>
+    </div>
+
+    <!-- Timer Example -->
+    <div id="timer-example">
+      <h2>Timer Example</h2>
+      <button id="start-timer">Start Timer</button>
+      <button id="pause-timer">Pause Timer</button>
+      <button id="resume-timer" disabled>Resume Timer</button>
+      <button id="cancel-timer">Cancel Timer</button>
+      <div id="timer-output" class="output">0</div>
+    </div>
+
+    <!-- Error Handling Example -->
+    <div id="error-example">
+      <h2>Error Handling</h2>
+      <button id="trigger-error">Trigger Error</button>
+      <div id="error-output" class="output"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
