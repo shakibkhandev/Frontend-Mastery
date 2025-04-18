@@ -1,0 +1,376 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const featuredNews = [
+	{
+		id: 1,
+		title: 'New Digital Services Platform Launched',
+		date: 'March 15, 2024',
+		category: 'Digital Services',
+		image: 'https://picsum.photos/800/400?random=3',
+		excerpt: 'The Government of Ireland launches a new digital services platform to streamline access to public services.',
+		author: 'Department of Digital Services'
+	},
+	{
+		id: 2,
+		title: 'Updated COVID-19 Guidelines',
+		date: 'March 14, 2024',
+		category: 'Health',
+		image: 'https://picsum.photos/800/400?random=4',
+		excerpt: 'Latest health and safety guidelines for the public regarding COVID-19 prevention and vaccination.',
+		author: 'Department of Health'
+	}
+];
+
+const latestNews = [
+	{
+		id: 3,
+		title: 'Economic Growth Forecast 2024',
+		date: 'March 13, 2024',
+		category: 'Economy',
+		excerpt: 'New report shows positive economic growth projections for Ireland in 2024.',
+		author: 'Department of Finance'
+	},
+	{
+		id: 4,
+		title: 'Green Energy Initiative Announcement',
+		date: 'March 12, 2024',
+		category: 'Environment',
+		excerpt: 'Government announces new initiatives to promote renewable energy adoption.',
+		author: 'Department of Environment'
+	},
+	{
+		id: 5,
+		title: 'Education Reform Program',
+		date: 'March 11, 2024',
+		category: 'Education',
+		excerpt: 'New education reform program to enhance learning opportunities for students.',
+		author: 'Department of Education'
+	},
+	{
+		id: 6,
+		title: 'Transport Infrastructure Update',
+		date: 'March 10, 2024',
+		category: 'Infrastructure',
+		excerpt: 'Major updates on ongoing transport infrastructure projects across Ireland.',
+		author: 'Department of Transport'
+	}
+];
+---
+
+<Layout>
+	<div class="news-header">
+		<h1>Latest News & Updates</h1>
+		<p>Stay informed about government initiatives, announcements, and updates</p>
+	</div>
+
+	<div class="news-container">
+		<section class="featured-news">
+			<h2>Featured Stories</h2>
+			<div class="featured-grid">
+				{featuredNews.map(article => (
+					<article class="featured-card">
+						<div class="featured-image">
+							<img src={article.image} alt={article.title} />
+							<span class="category-tag">{article.category}</span>
+						</div>
+						<div class="featured-content">
+							<div class="meta">
+								<span class="date">{article.date}</span>
+								<span class="author">{article.author}</span>
+							</div>
+							<h3>{article.title}</h3>
+							<p>{article.excerpt}</p>
+							<a href={`/news/${article.id}`} class="read-more">Read Full Story →</a>
+						</div>
+					</article>
+				))}
+			</div>
+		</section>
+
+		<div class="news-content">
+			<section class="latest-news">
+				<h2>Latest Updates</h2>
+				<div class="news-grid">
+					{latestNews.map(article => (
+						<article class="news-card">
+							<div class="news-content">
+								<span class="category-tag small">{article.category}</span>
+								<h3>{article.title}</h3>
+								<p>{article.excerpt}</p>
+								<div class="meta">
+									<span class="date">{article.date}</span>
+									<span class="author">{article.author}</span>
+								</div>
+								<a href={`/news/${article.id}`} class="read-more">Read More →</a>
+							</div>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<aside class="news-sidebar">
+				<div class="sidebar-section">
+					<h3>Categories</h3>
+					<ul class="category-list">
+						<li><a href="/news/category/health">Health & Safety</a></li>
+						<li><a href="/news/category/economy">Economy</a></li>
+						<li><a href="/news/category/education">Education</a></li>
+						<li><a href="/news/category/environment">Environment</a></li>
+						<li><a href="/news/category/technology">Technology</a></li>
+						<li><a href="/news/category/infrastructure">Infrastructure</a></li>
+					</ul>
+				</div>
+
+				<div class="sidebar-section">
+					<h3>Stay Updated</h3>
+					<form class="subscribe-form">
+						<p>Subscribe to our newsletter for the latest updates</p>
+						<div class="form-group">
+							<input type="email" placeholder="Enter your email" required />
+							<button type="submit">Subscribe</button>
+						</div>
+					</form>
+				</div>
+			</aside>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.news-header {
+		background: var(--primary-color);
+		color: white;
+		padding: 3rem 2rem;
+		text-align: center;
+		margin: -2rem -1rem 2rem -1rem;
+	}
+
+	.news-header h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.news-container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.featured-news {
+		margin-bottom: 3rem;
+	}
+
+	.featured-news h2,
+	.latest-news h2 {
+		color: var(--primary-color);
+		margin-bottom: 1.5rem;
+		font-size: 1.8rem;
+	}
+
+	.featured-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.featured-card {
+		background: white;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		transition: transform 0.2s;
+	}
+
+	.featured-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.featured-image {
+		position: relative;
+		height: 200px;
+	}
+
+	.featured-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.category-tag {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		background: var(--primary-color);
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		font-size: 0.875rem;
+	}
+
+	.category-tag.small {
+		position: static;
+		display: inline-block;
+		margin-bottom: 0.5rem;
+	}
+
+	.featured-content,
+	.news-card .news-content {
+		padding: 1.5rem;
+	}
+
+	.meta {
+		display: flex;
+		gap: 1rem;
+		font-size: 0.875rem;
+		color: #666;
+		margin-bottom: 0.5rem;
+	}
+
+	.featured-content h3 {
+		font-size: 1.25rem;
+		margin-bottom: 1rem;
+		color: var(--text-color);
+	}
+
+	.news-content {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 2rem;
+	}
+
+	.news-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.news-card {
+		background: white;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	.news-card h3 {
+		font-size: 1.1rem;
+		margin-bottom: 0.5rem;
+		color: var(--text-color);
+	}
+
+	.read-more {
+		display: inline-block;
+		margin-top: 1rem;
+		color: var(--primary-color);
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	.news-sidebar {
+		position: sticky;
+		top: calc(var(--header-height) + 2rem);
+		height: fit-content;
+	}
+
+	.sidebar-section {
+		background: white;
+		border-radius: 10px;
+		padding: 1.5rem;
+		margin-bottom: 1.5rem;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	.sidebar-section h3 {
+		color: var(--primary-color);
+		margin-bottom: 1rem;
+	}
+
+	.category-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.category-list li {
+		margin-bottom: 0.5rem;
+	}
+
+	.category-list a {
+		color: var(--text-color);
+		text-decoration: none;
+		display: block;
+		padding: 0.5rem;
+		border-radius: 5px;
+		transition: background-color 0.2s;
+	}
+
+	.category-list a:hover {
+		background-color: var(--background-light);
+		color: var(--primary-color);
+	}
+
+	.subscribe-form p {
+		margin-bottom: 1rem;
+	}
+
+	.subscribe-form .form-group {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.subscribe-form input {
+		flex: 1;
+		padding: 0.5rem;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		font-family: inherit;
+	}
+
+	.subscribe-form button {
+		background: var(--primary-color);
+		color: white;
+		border: none;
+		padding: 0.5rem 1rem;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background-color 0.2s;
+	}
+
+	.subscribe-form button:hover {
+		background: var(--secondary-color);
+	}
+
+	@media (max-width: 968px) {
+		.news-content {
+			grid-template-columns: 1fr;
+		}
+
+		.news-sidebar {
+			position: static;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.news-header {
+			padding: 2rem 1rem;
+		}
+
+		.news-header h1 {
+			font-size: 2rem;
+		}
+
+		.featured-grid,
+		.news-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+
+<script>
+	const subscribeForm = document.querySelector('.subscribe-form');
+	if (subscribeForm) {
+		subscribeForm.addEventListener('submit', (e) => {
+			e.preventDefault();
+			alert('Thank you for subscribing to our newsletter!');
+		});
+	}
+</script> 

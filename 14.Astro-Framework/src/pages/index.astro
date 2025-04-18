@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<div class="hero">
+		<div class="hero-content">
+			<h1>Welcome to Government of Ireland Services</h1>
+			<p>Access government services and information all in one place</p>
+			<div class="hero-buttons">
+				<a href="/services" class="primary-button">Explore Services</a>
+				<a href="/contact" class="secondary-button">Contact Us</a>
+			</div>
+		</div>
+	</div>
+
+	<section class="featured-services">
+		<h2>Popular Services</h2>
+		<div class="services-grid">
+			<div class="service-card">
+				<img src="/icons/passport.svg" alt="Passport Services" />
+				<h3>Passport Services</h3>
+				<p>Apply for or renew your passport online</p>
+				<a href="/services/passport" class="learn-more">Learn More →</a>
+			</div>
+			<div class="service-card">
+				<img src="/icons/tax.svg" alt="Tax Services" />
+				<h3>Tax Services</h3>
+				<p>File your taxes and manage your tax affairs</p>
+				<a href="/services/tax" class="learn-more">Learn More →</a>
+			</div>
+			<div class="service-card">
+				<img src="/icons/health.svg" alt="Healthcare" />
+				<h3>Healthcare</h3>
+				<p>Access medical cards and health services</p>
+				<a href="/services/healthcare" class="learn-more">Learn More →</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="news-updates">
+		<h2>Latest Updates</h2>
+		<div class="news-grid">
+			<article class="news-card">
+				<div class="news-image">
+					<img src="https://picsum.photos/800/400?random=1" alt="COVID-19 Updates" />
+				</div>
+				<div class="news-content">
+					<span class="date">March 15, 2024</span>
+					<h3>COVID-19 Latest Guidelines</h3>
+					<p>Updated health and safety guidelines for the public.</p>
+					<a href="/news/covid-guidelines" class="read-more">Read More →</a>
+				</div>
+			</article>
+			<article class="news-card">
+				<div class="news-image">
+					<img src="https://picsum.photos/800/400?random=2" alt="Digital Services" />
+				</div>
+				<div class="news-content">
+					<span class="date">March 10, 2024</span>
+					<h3>New Digital Services Launched</h3>
+					<p>Access more government services online.</p>
+					<a href="/news/digital-services" class="read-more">Read More →</a>
+				</div>
+			</article>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		background: linear-gradient(rgba(5, 89, 55, 0.9), rgba(5, 89, 55, 0.8)), url('https://picsum.photos/1920/1080');
+		background-size: cover;
+		background-position: center;
+		color: white;
+		padding: 6rem 2rem;
+		text-align: center;
+		margin: -2rem -1rem 2rem -1rem;
+	}
+
+	.hero-content {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.hero h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	.hero p {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+	}
+
+	.hero-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+	}
+
+	.primary-button, .secondary-button {
+		padding: 0.8rem 2rem;
+		border-radius: 30px;
+		text-decoration: none;
+		font-weight: 600;
+		transition: transform 0.2s;
+	}
+
+	.primary-button {
+		background-color: white;
+		color: var(--primary-color);
+	}
+
+	.secondary-button {
+		background-color: transparent;
+		color: white;
+		border: 2px solid white;
+	}
+
+	.primary-button:hover, .secondary-button:hover {
+		transform: translateY(-2px);
+	}
+
+	.featured-services, .news-updates {
+		margin: 4rem 0;
+	}
+
+	h2 {
+		text-align: center;
+		color: var(--primary-color);
+		margin-bottom: 2rem;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+		padding: 1rem;
+	}
+
+	.service-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 10px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s;
+		text-align: center;
+	}
+
+	.service-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.service-card img {
+		width: 64px;
+		height: 64px;
+		margin-bottom: 1rem;
+	}
+
+	.news-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+		padding: 1rem;
+	}
+
+	.news-card {
+		background: white;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	.news-image img {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+	}
+
+	.news-content {
+		padding: 1.5rem;
+	}
+
+	.date {
+		color: #666;
+		font-size: 0.9rem;
+	}
+
+	.learn-more, .read-more {
+		color: var(--primary-color);
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			padding: 4rem 1rem;
+		}
+
+		.hero h1 {
+			font-size: 2rem;
+		}
+
+		.hero-buttons {
+			flex-direction: column;
+		}
+
+		.services-grid, .news-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

@@ -1,0 +1,399 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const publications = [
+	{
+		id: 1,
+		title: 'National Development Plan 2021-2030',
+		type: 'Strategy',
+		department: 'Department of Public Expenditure',
+		date: 'October 2021',
+		fileSize: '5.2 MB',
+		format: 'PDF',
+		description: 'The National Development Plan sets out the investment priorities that will underpin the implementation of the National Planning Framework.'
+	},
+	{
+		id: 2,
+		title: 'Climate Action Plan 2024',
+		type: 'Policy',
+		department: 'Department of Environment',
+		date: 'January 2024',
+		fileSize: '3.8 MB',
+		format: 'PDF',
+		description: 'Details of Ireland\'s climate action strategy and targets for reducing greenhouse gas emissions.'
+	},
+	{
+		id: 3,
+		title: 'Annual Economic Report 2023',
+		type: 'Report',
+		department: 'Department of Finance',
+		date: 'December 2023',
+		fileSize: '2.5 MB',
+		format: 'PDF',
+		description: 'Comprehensive analysis of Ireland\'s economic performance and outlook for the year 2023.'
+	},
+	{
+		id: 4,
+		title: 'Healthcare Strategy 2024-2028',
+		type: 'Strategy',
+		department: 'Department of Health',
+		date: 'February 2024',
+		fileSize: '4.1 MB',
+		format: 'PDF',
+		description: 'Strategic plan for the development and improvement of healthcare services in Ireland.'
+	}
+];
+
+const categories = [
+	'All Documents',
+	'Strategies',
+	'Policies',
+	'Reports',
+	'Guidelines',
+	'Research'
+];
+
+const departments = [
+	'All Departments',
+	'Department of Finance',
+	'Department of Health',
+	'Department of Education',
+	'Department of Environment',
+	'Department of Public Expenditure'
+];
+---
+
+<Layout>
+	<div class="publications-header">
+		<h1>Publications & Documents</h1>
+		<p>Access official government publications, reports, and documents</p>
+	</div>
+
+	<div class="publications-container">
+		<aside class="filters-sidebar">
+			<div class="search-box">
+				<input type="text" id="search-input" placeholder="Search publications..." />
+			</div>
+
+			<div class="filter-section">
+				<h3>Document Type</h3>
+				<ul class="filter-list" id="category-filters">
+					{categories.map(category => (
+						<li>
+							<label class="filter-option">
+								<input type="radio" name="category" value={category} checked={category === 'All Documents'} />
+								<span class="filter-text">{category}</span>
+							</label>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			<div class="filter-section">
+				<h3>Department</h3>
+				<ul class="filter-list" id="department-filters">
+					{departments.map(department => (
+						<li>
+							<label class="filter-option">
+								<input type="radio" name="department" value={department} checked={department === 'All Departments'} />
+								<span class="filter-text">{department}</span>
+							</label>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			<button id="clear-filters" class="clear-filters-btn">Clear All Filters</button>
+		</aside>
+
+		<main class="publications-content">
+			<div class="publications-grid" id="publications-grid">
+				{publications.map(pub => (
+					<article class="publication-card">
+						<div class="publication-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+								<polyline points="14 2 14 8 20 8"></polyline>
+								<line x1="16" y1="13" x2="8" y2="13"></line>
+								<line x1="16" y1="17" x2="8" y2="17"></line>
+								<line x1="10" y1="9" x2="8" y2="9"></line>
+							</svg>
+						</div>
+						<div class="publication-content">
+							<h3>{pub.title}</h3>
+							<p class="description">{pub.description}</p>
+							<div class="publication-meta">
+								<span class="department">{pub.department}</span>
+								<span class="date">{pub.date}</span>
+							</div>
+							<div class="publication-details">
+								<span class="type">{pub.type}</span>
+								<span class="format">{pub.format}</span>
+								<span class="size">{pub.fileSize}</span>
+							</div>
+							<div class="publication-actions">
+								<a href={`/publications/${pub.id}`} class="view-btn">View Details</a>
+								<a href={`/publications/download/${pub.id}`} class="download-btn">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+										<polyline points="7 10 12 15 17 10"></polyline>
+										<line x1="12" y1="15" x2="12" y2="3"></line>
+									</svg>
+									Download
+								</a>
+							</div>
+						</div>
+					</article>
+				))}
+			</div>
+		</main>
+	</div>
+</Layout>
+
+<style>
+	.publications-header {
+		background: var(--primary-color);
+		color: white;
+		padding: 3rem 2rem;
+		text-align: center;
+		margin: -2rem -1rem 2rem -1rem;
+	}
+
+	.publications-header h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.publications-container {
+		display: grid;
+		grid-template-columns: 300px 1fr;
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.filters-sidebar {
+		position: sticky;
+		top: calc(var(--header-height) + 2rem);
+		height: fit-content;
+		background: white;
+		padding: 1.5rem;
+		border-radius: 10px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	.search-box {
+		margin-bottom: 1.5rem;
+	}
+
+	.search-box input {
+		width: 100%;
+		padding: 0.75rem;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		font-family: inherit;
+		font-size: 1rem;
+	}
+
+	.filter-section {
+		margin-bottom: 1.5rem;
+	}
+
+	.filter-section h3 {
+		color: var(--primary-color);
+		margin-bottom: 1rem;
+		font-size: 1.1rem;
+	}
+
+	.filter-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.filter-option {
+		display: flex;
+		align-items: center;
+		padding: 0.5rem;
+		cursor: pointer;
+	}
+
+	.filter-option input[type="radio"] {
+		margin-right: 0.5rem;
+	}
+
+	.filter-text {
+		color: var(--text-color);
+	}
+
+	.clear-filters-btn {
+		width: 100%;
+		padding: 0.75rem;
+		background: none;
+		border: 1px solid var(--primary-color);
+		color: var(--primary-color);
+		border-radius: 5px;
+		cursor: pointer;
+		font-weight: 500;
+		transition: all 0.2s;
+	}
+
+	.clear-filters-btn:hover {
+		background: var(--primary-color);
+		color: white;
+	}
+
+	.publications-grid {
+		display: grid;
+		gap: 1.5rem;
+	}
+
+	.publication-card {
+		background: white;
+		border-radius: 10px;
+		padding: 1.5rem;
+		display: grid;
+		grid-template-columns: 48px 1fr;
+		gap: 1.5rem;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	.publication-icon {
+		color: var(--primary-color);
+	}
+
+	.publication-content h3 {
+		color: var(--text-color);
+		margin-bottom: 0.5rem;
+		font-size: 1.2rem;
+	}
+
+	.description {
+		color: #666;
+		margin-bottom: 1rem;
+		line-height: 1.5;
+	}
+
+	.publication-meta {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 0.5rem;
+		font-size: 0.9rem;
+		color: #666;
+	}
+
+	.publication-details {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 1rem;
+		font-size: 0.9rem;
+	}
+
+	.type,
+	.format,
+	.size {
+		background: var(--background-light);
+		padding: 0.25rem 0.75rem;
+		border-radius: 15px;
+		color: var(--primary-color);
+	}
+
+	.publication-actions {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.view-btn,
+	.download-btn {
+		padding: 0.5rem 1rem;
+		border-radius: 5px;
+		text-decoration: none;
+		font-weight: 500;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		transition: background-color 0.2s;
+	}
+
+	.view-btn {
+		background: var(--background-light);
+		color: var(--primary-color);
+	}
+
+	.download-btn {
+		background: var(--primary-color);
+		color: white;
+	}
+
+	.view-btn:hover {
+		background: #e5e5e5;
+	}
+
+	.download-btn:hover {
+		background: var(--secondary-color);
+	}
+
+	@media (max-width: 968px) {
+		.publications-container {
+			grid-template-columns: 1fr;
+		}
+
+		.filters-sidebar {
+			position: static;
+			margin-bottom: 2rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.publications-header {
+			padding: 2rem 1rem;
+		}
+
+		.publications-header h1 {
+			font-size: 2rem;
+		}
+
+		.publication-card {
+			grid-template-columns: 1fr;
+		}
+
+		.publication-icon {
+			display: none;
+		}
+
+		.publication-actions {
+			flex-direction: column;
+		}
+
+		.view-btn,
+		.download-btn {
+			text-align: center;
+			justify-content: center;
+		}
+	}
+</style>
+
+<script>
+	const searchInput = document.getElementById('search-input') as HTMLInputElement;
+	const categoryFilters = document.getElementById('category-filters');
+	const departmentFilters = document.getElementById('department-filters');
+	const clearFiltersBtn = document.getElementById('clear-filters');
+	const publicationsGrid = document.getElementById('publications-grid');
+
+	if (searchInput && categoryFilters && departmentFilters && clearFiltersBtn) {
+		// Add filter functionality here
+		clearFiltersBtn.addEventListener('click', () => {
+			// Reset all filters
+			searchInput.value = '';
+			const radioButtons = document.querySelectorAll('input[type="radio"]') as NodeListOf<HTMLInputElement>;
+			radioButtons.forEach(radio => {
+				if (radio.value === 'All Documents' || radio.value === 'All Departments') {
+					radio.checked = true;
+				} else {
+					radio.checked = false;
+				}
+			});
+		});
+	}
+</script> 

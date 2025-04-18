@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240" height="60" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Harp symbol -->
+    <path d="M30 10C30 10 35 15 35 30C35 45 25 47 20 60C18 55 17 50 17 45C17 35 30 30 30 10Z" fill="#055937"/>
+    <path d="M20 5C23 8 25 12 25 15C25 25 10 28 13 45C8 43 5 35 5 30C5 15 20 15 20 5Z" fill="#055937"/>
+    <path d="M40 15C42 18 43 22 43 25C43 35 28 38 31 55C26 53 23 45 23 40C23 25 40 25 40 15Z" fill="#055937"/>
+    
+    <!-- Text -->
+    <text x="70" y="35" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#055937">
+        Government of Ireland
+    </text>
+    <text x="70" y="50" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#055937">
+        Rialtas na hÉireann
+    </text>
+</svg> 

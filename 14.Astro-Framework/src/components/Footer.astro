@@ -1,0 +1,188 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+	<div class="footer-content">
+		<div class="footer-section">
+			<h3>About Us</h3>
+			<p>The Government of Ireland provides essential services and information to citizens and residents of Ireland.</p>
+			<div class="social-links">
+				<a href="https://twitter.com/governmentofireland" aria-label="Twitter">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+					</svg>
+				</a>
+				<a href="https://facebook.com/governmentofireland" aria-label="Facebook">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
+					</svg>
+				</a>
+				<a href="https://youtube.com/governmentofireland" aria-label="YouTube">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M12.244 4c.534.003 1.87.016 3.29.073l.504.02c1.429.063 2.857.153 3.566.263.945.153 1.687.6 2.087 1.258.4.657.6 1.82.6 3.47v2.078c0 1.65-.2 2.813-.6 3.47-.4.658-1.142 1.105-2.087 1.258-.709.11-2.137.2-3.566.263l-.504.02c-1.42.057-2.756.07-3.29.073-.534-.003-1.87-.016-3.29-.073l-.504-.02c-1.429-.063-2.857-.153-3.566-.263-.945-.153-1.687-.6-2.087-1.258-.4-.657-.6-1.82-.6-3.47V9.084c0-1.65.2-2.813.6-3.47.4-.658 1.142-1.105 2.087-1.258.709-.11 2.137-.2 3.566-.263l.504-.02c1.42-.057 2.756-.07 3.29-.073zM10 8.5v7l6-3.5-6-3.5z"/>
+					</svg>
+				</a>
+				<a href="https://linkedin.com/company/governmentofireland" aria-label="LinkedIn">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M6.5 8C7.32843 8 8 7.32843 8 6.5C8 5.67157 7.32843 5 6.5 5C5.67157 5 5 5.67157 5 6.5C5 7.32843 5.67157 8 6.5 8Z"/>
+						<path d="M5 10C5 9.44772 5.44772 9 6 9H7C7.55228 9 8 9.44771 8 10V18C8 18.5523 7.55228 19 7 19H6C5.44772 19 5 18.5523 5 18V10Z"/>
+						<path d="M11 19H12C12.5523 19 13 18.5523 13 18V13.5C13 12 14 11 15.5 11C17 11 18 12 18 13.5V18C18 18.5523 18.4477 19 19 19H20C20.5523 19 21 18.5523 21 18V13.5C21 10.5 19 8 16 8C14.5 8 13 8.5 12 9.5V10C12 9.44771 11.5523 9 11 9H10C9.44771 9 9 9.44772 9 10V18C9 18.5523 9.44771 19 10 19H11Z"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+		
+		<div class="footer-section">
+			<h3>Quick Links</h3>
+			<ul>
+				<li><a href="/services">Our Services</a></li>
+				<li><a href="/news">Latest News</a></li>
+				<li><a href="/publications">Publications</a></li>
+				<li><a href="/careers">Careers</a></li>
+			</ul>
+		</div>
+
+		<div class="footer-section">
+			<h3>Support</h3>
+			<ul>
+				<li><a href="/help">Help Center</a></li>
+				<li><a href="/faq">FAQs</a></li>
+				<li><a href="/contact">Contact Us</a></li>
+				<li><a href="/feedback">Feedback</a></li>
+			</ul>
+		</div>
+
+		<div class="footer-section">
+			<h3>Legal</h3>
+			<ul>
+				<li><a href="/privacy">Privacy Policy</a></li>
+				<li><a href="/terms">Terms of Use</a></li>
+				<li><a href="/accessibility">Accessibility</a></li>
+				<li><a href="/cookies">Cookie Policy</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="footer-bottom">
+		<p>&copy; {currentYear} Government of Ireland. All rights reserved.</p>
+		<div class="language-selector">
+			<a href="/ga" class="language-link">Gaeilge</a>
+			<span class="separator">|</span>
+			<a href="/" class="language-link active">English</a>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		background-color: var(--primary-color);
+		color: white;
+		padding: 4rem 2rem 2rem;
+		margin-top: 4rem;
+	}
+
+	.footer-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 3rem;
+	}
+
+	.footer-section h3 {
+		font-size: 1.2rem;
+		margin-bottom: 1.5rem;
+		font-weight: 600;
+	}
+
+	.footer-section p {
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+
+	.footer-section ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.footer-section ul li {
+		margin-bottom: 0.75rem;
+	}
+
+	.footer-section ul a {
+		color: rgba(255, 255, 255, 0.8);
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.footer-section ul a:hover {
+		color: white;
+	}
+
+	.social-links {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.social-links a {
+		color: white;
+		opacity: 0.8;
+		transition: opacity 0.2s;
+	}
+
+	.social-links a:hover {
+		opacity: 1;
+	}
+
+	.footer-bottom {
+		max-width: 1200px;
+		margin: 3rem auto 0;
+		padding-top: 2rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.language-selector {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.language-link {
+		color: rgba(255, 255, 255, 0.8);
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.language-link:hover,
+	.language-link.active {
+		color: white;
+	}
+
+	.separator {
+		color: rgba(255, 255, 255, 0.4);
+	}
+
+	@media (max-width: 768px) {
+		.footer {
+			padding: 3rem 1rem 1.5rem;
+		}
+
+		.footer-content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.footer-bottom {
+			flex-direction: column;
+			text-align: center;
+			gap: 1.5rem;
+		}
+	}
+</style> 
