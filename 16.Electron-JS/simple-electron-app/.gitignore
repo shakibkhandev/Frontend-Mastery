@@ -1,0 +1,66 @@
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Build outputs
+/dist/
+/build/
+/out/
+/release/
+/*.log
+
+# Electron packaging tools
+# For electron-builder
+/dist_electron/
+/release/
+
+# For electron-forge
+/.webpack/
+/make/
+
+# VSCode settings
+.vscode/
+.history/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Electron cache and temp
+.cache/
+tmp/
+*.bak
+
+# Compiled source
+*.tsbuildinfo
+*.swp
+
+# Mac system files
+.AppleDouble
+.LSOverride
+Icon?
+
+# Windows hidden files
+ehthumbs.db
+desktop.ini
+
+# Optional npm cache
+.npm/
+
+# Coverage
+coverage/
+
+# Sentry CLI config
+.sentryclirc
+
+# Others
+*.orig
+*.rej
+*.sublime-workspace
